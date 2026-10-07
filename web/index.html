@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>商品数据 · 本地快照</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/gallery.css">
+  <link rel="stylesheet" href="/filter.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">◈</span><span>FastMoss <small>商品数据 · 本地快照</small></span></div>
+    <div class="top-search"><input id="global-search" placeholder="搜索已采集的商品名称或 ID" aria-label="搜索商品"><button id="global-search-button" aria-label="搜索">⌕</button></div>
+    <div class="top-right"><span class="live-dot"></span><span>美国 · 近半年</span><span class="account-pill">本地数据</span></div>
+  </header>
+  <aside class="sidebar">
+    <div class="region"><span>🇺🇸</span><strong>美国</strong><span class="chevron">⌄</span></div>
+    <div class="side-section"><span class="side-icon">⌂</span>工作台</div>
+    <div class="side-section"><span class="side-icon">▥</span>品类大盘</div>
+    <div class="side-section side-selected"><span class="side-icon">▢</span>商品<span class="chevron">⌃</span></div>
+    <nav id="module-nav" aria-label="商品模块"></nav>
+    <div class="side-section side-muted"><span class="side-icon">☆</span>达人<span class="chevron">⌄</span></div>
+    <div class="side-section side-muted"><span class="side-icon">▣</span>店铺<span class="chevron">⌄</span></div>
+    <div class="side-section side-muted"><span class="side-icon">◈</span>广告<span class="chevron">⌄</span></div>
+  </aside>
+  <main class="main">
+    <div class="page-heading"><h1 id="page-title">TikTok 美国 商品搜索</h1><div id="snapshot-note">本地采集快照</div></div>
+    <section class="filter-card">
+      <div id="module-filters"></div>
+      <div class="selected-row"><strong>已选条件：</strong><span id="active-filters" class="selected-chip">国家/地区：美国</span><button id="clear-filters" class="text-button">清空筛选</button></div>
+    </section>
+    <section class="table-card">
+      <div class="table-tools"><div><strong id="result-count">加载中…</strong><span class="muted" id="result-hint"></span></div><div class="table-tool-right"><div id="page-size-control" aria-label="每页显示条数"></div><label>排序 <select id="sort-select"></select></label><button id="export-csv" class="export-button" type="button">导出当前筛选 CSV</button></div></div>
+      <div class="table-scroll"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+      <div id="loading" class="loading" hidden>正在读取本地数据库…</div>
+      <div id="empty" class="empty" hidden>此筛选条件下没有已采集的商品。</div>
+      <div class="pagination"><span id="page-summary"></span><div id="page-controls"></div><label>跳至 <input id="jump-page" inputmode="numeric" aria-label="跳转页码"> 页</label></div>
+    </section>
+    <footer>商品资料来自 FastMoss 原站导出与浏览器 JSON；各日期的采集状态见上方提示。</footer>
+  </main>
+  <div id="detail-overlay" class="overlay" hidden><div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title"><button id="detail-close" class="close" aria-label="关闭详情">×</button><div id="detail-content"></div></div></div>
+</body>
+</html>
